@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Cinzel", Georgia, serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #faf9f5;
+  color: #1a1a18;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+html.dark body {
+  background-color: #0c0d0e;
+  color: #f3f3f2;
+}
+
+h1, h2, h3, .font-serif-title {
+  font-family: var(--font-serif);
+}
+
+.font-cinzel {
+  font-family: var(--font-display);
+}

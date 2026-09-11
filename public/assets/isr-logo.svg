@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <filter id="isr-shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.22" />
+    </filter>
+    <filter id="isr-shadow-subtle" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000000" flood-opacity="0.18" />
+    </filter>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap');
+      .isr-main-title {
+        font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+        font-weight: 800;
+        font-size: 196px;
+        letter-spacing: -2px;
+      }
+      .isr-subtitle {
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+        font-weight: 800;
+        font-size: 27px;
+        letter-spacing: 5px;
+      }
+    </style>
+  </defs>
+
+  <!-- Group for entire logo mark -->
+  <g id="isr-logo-mark">
+    <!-- Main Acronym: ISR -->
+    <text
+      x="300"
+      y="285"
+      text-anchor="middle"
+      fill="#000000"
+      class="isr-main-title"
+      filter="url(#isr-shadow)"
+    >ISR</text>
+
+    <!-- Subtitle: IDEOLOGICAL STUDIES RESEARCH -->
+    <text
+      x="302"
+      y="348"
+      text-anchor="middle"
+      fill="#000000"
+      class="isr-subtitle"
+      filter="url(#isr-shadow-subtle)"
+    >IDEOLOGICAL STUDIES RESEARCH</text>
+
+    <!-- Handwritten Signature: Zayd AlHaji -->
+    <g transform="translate(195, 362) scale(0.68)" filter="url(#isr-shadow-subtle)">
+      <!-- Authentic Calligraphic Cursive Script of Zayd AlHaji -->
+      <!-- Zayd -->
+      <path
+        d="M 12 35 C 18 18, 38 12, 54 22 C 60 26, 62 34, 52 46 C 42 58, 20 86, 14 96 C 8 106, 16 110, 28 106 C 42 102, 60 96, 74 90"
+        stroke="#000000"
+        stroke-width="4.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"
+      />
+      <!-- a -->
+      <path
+        d="M 72 88 C 76 80, 84 74, 92 74 C 84 78, 76 88, 80 96 C 84 102, 94 98, 98 90"
+        stroke="#000000"
+        stroke-width="3.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"
+      />
+      <!-- y (descender loop) -->
+      <path
+        d="M 100 84 C 104 78, 108 86, 110 94 C 112 102, 116 102, 120 90 C 122 84, 126 76, 128 84 C 128 100, 124 135, 118 152 C 110 170, 94 168, 90 152 C 86 138, 106 116, 134 94"
+        stroke="#000000"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"
+      />
+      <!-- d (ascender loop) -->
+      <path
+        d="M 134 92 C 140 84, 148 80, 154 86 C 158 90, 152 100, 144 102 C 138 102, 146 88, 152 74 C 158 54, 162 20, 158 12 C 154 4, 148 14, 148 30 C 148 55, 152 85, 160 98"
+        stroke="#000000"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"
+      />
+      <!-- AlHaji -->
+      <!-- A -->
+      <path
+        d="M 166 98 C 174 80, 186 45, 194 30 C 200 18, 208 22, 204 38 C 198 62, 190 88, 198 98 C 206 102, 216 92, 224 76"
+        stroke="#000000"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"
+      />
+      <!-- l (ascender loop) -->
+      <path
+        d="M 222 82 C 228 65, 238 28, 242 16 C 246 6, 252 12, 248 28 C 244 50, 240 82, 248 98"
+        stroke="#000000"
+        stroke-width="3.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"
+      />
+      <!-- H (tall ascender & cross loop) -->
+      <path
+        d="M 252 90 C 258 70, 268 32, 272 18 C 276 8, 282 12, 278 28 C 274 50, 270 80, 272 96 C 274 82, 284 64, 294 62 C 302 60, 304 74, 300 92"
+        stroke="#000000"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"
+      />
+      <!-- a -->
+      <path
+        d="M 302 88 C 308 80, 316 76, 322 76 C 316 82, 310 90, 314 96 C 318 100, 326 96, 330 88"
+        stroke="#000000"
+        stroke-width="3.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"
+      />
+      <!-- j (descender loop) -->
+      <path
+        d="M 334 82 C 338 78, 342 86, 344 94 C 346 110, 340 142, 332 158 C 324 172, 312 168, 310 154 C 308 140, 324 120, 346 98"
+        stroke="#000000"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"
+      />
+      <!-- i & dot -->
+      <path
+        d="M 350 94 C 354 88, 360 82, 368 78"
+        stroke="#000000"
+        stroke-width="3.8"
+        stroke-linecap="round"
+        fill="none"
+      />
+      <circle cx="362" cy="62" r="3.8" fill="#000000" />
+    </g>
+  </g>
+</svg>

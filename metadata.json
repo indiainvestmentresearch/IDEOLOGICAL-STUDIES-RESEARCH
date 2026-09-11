@@ -1,0 +1,6 @@
+{
+  "name": "Ideological Studies Research",
+  "description": "Authentic Islamic knowledge, Quran and Hadith research, live podcasts, and the .Gate knowledge ecosystem founded by Zayd Iqbal Haji.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
