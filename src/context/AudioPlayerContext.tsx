@@ -15,6 +15,7 @@ interface AudioContextType {
   setPlaybackRate: (rate: number) => void;
   skipForward: (seconds?: number) => void;
   skipBackward: (seconds?: number) => void;
+  closePlayer: () => void;
 }
 
 const AudioContext = createContext<AudioContextType | undefined>(undefined);
@@ -131,6 +132,18 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     audioRef.current.currentTime = Math.max(0, audioRef.current.currentTime - seconds);
   };
 
+  const closePlayer = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      audioRef.current.src = '';
+    }
+    setIsPlaying(false);
+    setCurrentTime(0);
+    setDuration(0);
+    setCurrentEpisode(null);
+  };
+
   return (
     <AudioContext.Provider
       value={{
@@ -146,7 +159,8 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         setVolume,
         setPlaybackRate,
         skipForward,
-        skipBackward
+        skipBackward,
+        closePlayer
       }}
     >
       {children}

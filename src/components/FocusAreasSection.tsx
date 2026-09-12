@@ -26,7 +26,7 @@ export const FocusAreasSection: React.FC = () => {
       icon: Shield,
       count: '68,061 Narrations',
       summary: 'Critical biographical evaluation of narrators, isnad authentication, matn text verification, and separating sound traditions from weak attributions.',
-      focusPoints: ['Sahihayn Methodology', 'Four Sunan Verification', 'Ilm al-Rijal (Biographies)', 'Prophetic Akhlaq']
+      focusPoints: ['Saheeh Methodology', 'Four Sunan Verification', 'Ilm al-Rijal (Biographies)', 'Prophetic Akhlaq']
     },
     {
       title: 'Aqeedah',
@@ -198,7 +198,7 @@ export const FocusAreasSection: React.FC = () => {
               </blockquote>
 
               <div className="pt-2 text-[11px] text-neutral-400 font-sans">
-                These principles guide ISR research, community circles, and the .Gate knowledge ecosystem.
+                These principles guide ISR research, community circles, and the Gate knowledge ecosystem.
               </div>
             </div>
 

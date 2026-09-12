@@ -5,7 +5,7 @@ import { SOCIAL_LINKS } from '../data/staticData';
 
 export const CommunityAndFooter: React.FC = () => {
   return (
-    <footer id="community-channels" className="bg-neutral-950 text-neutral-300 pt-16 sm:pt-20 border-t border-neutral-800">
+    <footer id="community-channels" className="bg-neutral-950 text-neutral-300 pt-16 sm:pt-20 pb-20 sm:pb-24 border-t border-neutral-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Community Engagement Section */}
@@ -200,7 +200,7 @@ export const CommunityAndFooter: React.FC = () => {
               </li>
               <li>
                 <a href="#gate-ecosystem" className="hover:text-amber-400 transition-colors">
-                  .Gate Knowledge Ecosystem
+                  Gate Knowledge Ecosystem
                 </a>
               </li>
               <li>

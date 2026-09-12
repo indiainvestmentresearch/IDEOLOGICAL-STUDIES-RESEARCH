@@ -27,7 +27,7 @@ export const GateWebAppCTA: React.FC = () => {
               
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-800 border border-neutral-700 text-amber-300 text-xs font-semibold tracking-wider uppercase">
                 <GateLogo className="h-4 w-auto" variant="light" />
-                <span className="ml-1">The .Gate Knowledge WebApp</span>
+                <span className="ml-1">The Gate Knowledge WebApp</span>
               </div>
 
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-white tracking-tight leading-tight">
@@ -35,7 +35,7 @@ export const GateWebAppCTA: React.FC = () => {
               </h2>
 
               <p className="text-sm sm:text-base text-neutral-300 font-sans leading-relaxed">
-                Curated deliberately for faith, intellectual development, and strategic competence. The .Gate application bridges the divide between classical scholasticism and contemporary institutional analysis.
+                Curated deliberately for faith, intellectual development, and strategic competence. The Gate application bridges the divide between classical scholasticism and contemporary institutional analysis.
               </p>
 
               {/* Verified Resource Badges */}
@@ -104,72 +104,40 @@ export const GateWebAppCTA: React.FC = () => {
 
             </div>
 
-            {/* Right Graphical WebApp Representation (No dead links, purely graphic presentation) */}
+            {/* Right Graphical WebApp Representation with Featured Image */}
             <div className="lg:col-span-5 flex justify-center">
-              <div className="w-full max-w-sm bg-neutral-950 rounded-2xl border border-neutral-700 shadow-2xl p-5 space-y-4">
-                
-                {/* Mockup Mobile Status Header */}
-                <div className="flex items-center justify-between pb-3 border-b border-neutral-800 text-[11px] text-neutral-400">
-                  <span className="font-mono">GATE WEBAPP</span>
+              <div className="w-full max-w-md bg-neutral-950 rounded-2xl border border-neutral-700 shadow-2xl overflow-hidden p-3 space-y-3">
+                <div className="flex items-center justify-between px-2 pt-1 pb-2 border-b border-neutral-800 text-[11px] text-neutral-400">
+                  <span className="font-mono text-amber-400 font-semibold">GATE FEATURED VISUAL</span>
                   <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                    <span>Synchronized</span>
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>Active Ecosystem</span>
                   </div>
                 </div>
 
-                {/* Brand in Mockup */}
-                <div className="text-center py-2">
-                  <GateLogo className="h-8 w-auto mx-auto mb-1" variant="light" />
-                  <div className="text-xs text-neutral-400 font-serif italic">
-                    The Curated Gate Ecosystem
-                  </div>
+                {/* Featured Image */}
+                <div className="relative overflow-hidden flex items-center justify-center p-1">
+                  <img
+                    src="/src/assets/images/GATE FI.png"
+                    alt="GATE Ecosystem Featured View"
+                    className="w-full h-auto object-contain"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
 
-                {/* Graphic Modules in Mockup */}
-                <div className="space-y-2 text-xs">
-                  <div className="p-3 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-between">
-                    <div className="flex items-center gap-2.5">
-                      <BookOpen className="w-4 h-4 text-amber-400" />
-                      <div>
-                        <div className="font-semibold text-white">Classical Texts Vault</div>
-                        <div className="text-[10px] text-neutral-400">6,236 Verses + 68,061 Hadiths</div>
-                      </div>
-                    </div>
-                    <span className="text-[10px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono">
-                      Verified
-                    </span>
+                <div className="grid grid-cols-3 gap-2 px-1 pb-1">
+                  <div className="p-2 rounded bg-neutral-900 border border-neutral-800 text-center">
+                    <div className="text-[10px] text-neutral-400">Verses</div>
+                    <div className="text-xs font-bold text-amber-400">6,236</div>
                   </div>
-
-                  <div className="p-3 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-between">
-                    <div className="flex items-center gap-2.5">
-                      <Database className="w-4 h-4 text-emerald-400" />
-                      <div>
-                        <div className="font-semibold text-white">Market Research Reports</div>
-                        <div className="text-[10px] text-neutral-400">4,000+ Listed Companies Audited</div>
-                      </div>
-                    </div>
-                    <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono">
-                      IFR Data
-                    </span>
+                  <div className="p-2 rounded bg-neutral-900 border border-neutral-800 text-center">
+                    <div className="text-[10px] text-neutral-400">Hadiths</div>
+                    <div className="text-xs font-bold text-emerald-400">68,061</div>
                   </div>
-
-                  <div className="p-3 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-between">
-                    <div className="flex items-center gap-2.5">
-                      <Headphones className="w-4 h-4 text-sky-400" />
-                      <div>
-                        <div className="font-semibold text-white">Curated Audiobooks</div>
-                        <div className="text-[10px] text-neutral-400">Self-Help, Finance, Psychology</div>
-                      </div>
-                    </div>
-                    <span className="text-[10px] px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 font-mono">
-                      Audio
-                    </span>
+                  <div className="p-2 rounded bg-neutral-900 border border-neutral-800 text-center">
+                    <div className="text-[10px] text-neutral-400">Companies</div>
+                    <div className="text-xs font-bold text-sky-400">4,000+</div>
                   </div>
-                </div>
-
-                {/* Graphic Status Footer */}
-                <div className="pt-2 text-center text-[11px] text-neutral-500">
-                  Graphic Gate WebApp Overview
                 </div>
 
               </div>

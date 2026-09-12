@@ -51,7 +51,7 @@ export const ClassicalLibrarySection: React.FC = () => {
       scholar: 'Imam Ahmad ibn Shu‘ayb an-Nasa’i (214 to 303 AH)',
       count: 5758,
       category: 'sunan',
-      description: 'Renowned for strict authentication criteria, second only to the Sahihayn in precision among the classical Sunan works.',
+      description: 'Renowned for strict authentication criteria, second only to the Saheeh in precision among the classical Sunan works.',
       tag: 'Strict Isnad'
     },
     {
@@ -136,7 +136,7 @@ export const ClassicalLibrarySection: React.FC = () => {
               68,061 Hadiths
             </div>
             <p className="text-xs text-neutral-400 leading-relaxed font-sans">
-              Comprising 15,126 Sahihayn traditions, 19,329 Four Sunan legal narrations, and 33,606 reports preserved by early Imams including Ahmad ibn Hanbal and Malik.
+              Comprising 15,126 Saheeh traditions, 19,329 Four Sunan legal narrations, and 33,606 reports preserved by early Imams including Ahmad ibn Hanbal and Malik.
             </p>
           </div>
 
@@ -161,7 +161,7 @@ export const ClassicalLibrarySection: React.FC = () => {
           </span>
           {[
             { id: 'all', label: 'All Collections (10 Works)' },
-            { id: 'sahih', label: 'Sahihayn (Bukhari & Muslim)' },
+            { id: 'sahih', label: 'Saheeh (Bukhari & Muslim)' },
             { id: 'sunan', label: 'The Four Sunan' },
             { id: 'imams', label: 'Early Imams & Musnad' }
           ].map((tab) => (

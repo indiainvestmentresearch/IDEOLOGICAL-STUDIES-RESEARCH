@@ -1,8 +1,11 @@
 import React from 'react';
 import { BookOpen, Headphones, Library, Compass, ArrowRight } from 'lucide-react';
 import { CLASSICAL_TEXT_BREAKDOWN, SOCIAL_LINKS } from '../data/staticData';
+import { useLanguage } from '../context/LanguageContext';
 
 export const HeroSection: React.FC = () => {
+  const { t, language } = useLanguage();
+
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-b from-[#faf8f2] via-[#f5f2e9] to-[#eeeae0] text-neutral-900 border-b border-neutral-200/90 dark:from-neutral-950 dark:via-neutral-950 dark:to-neutral-900 dark:text-neutral-100 dark:border-neutral-800 transition-colors duration-200">
       {/* Subtle architectural background grid */}
@@ -19,17 +22,23 @@ export const HeroSection: React.FC = () => {
           {/* Scholarly provenance tag */}
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 border border-amber-300/80 text-amber-900 dark:bg-amber-500/10 dark:border-amber-500/20 dark:text-amber-300 text-xs font-semibold tracking-wider uppercase mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-600 dark:bg-amber-400" />
-            <span>Ideological Studies Research | Led by Zayd Iqbal Haji</span>
+            <span>{t('Ideological Studies Research | Led by Zayd Iqbal Haji', 'أبحاث الدراسات العقدية | بإشراف زيد إقبال حاجي')}</span>
           </div>
 
           {/* Primary Editorial Heading */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-neutral-900 dark:text-white tracking-tight leading-[1.15] mb-6">
-            Authentic Knowledge Rooted in Revelation, Accessible to Every Seeker.
+            {t(
+              'Authentic Knowledge Rooted in Revelation, Accessible to Every Seeker.',
+              'علم أصيل متجذر في الوحي، ومتاح لكل باحث عن الحق.'
+            )}
           </h1>
 
           {/* Substantive introductory prose */}
           <p className="text-base sm:text-lg md:text-xl text-neutral-700 dark:text-neutral-300 font-sans leading-relaxed mb-8 max-w-3xl">
-            Ideological Studies Research (ISR) preserves, examines, and articulates the classical disciplines of Islam. Through a comprehensive audio library, systematic podcast analysis, verified texts, and scholarly commentary, ISR connects students and researchers directly to original prophetic traditions and primary sources.
+            {t(
+              'Ideological Studies Research (ISR) preserves, examines, and articulates the classical disciplines of Islam. Through a comprehensive audio library, systematic podcast analysis, verified texts, and scholarly commentary, ISR connects students and researchers directly to original prophetic traditions and primary sources.',
+              'تقوم أبحاث الدراسات العقدية (ISR) بالحفاظ على العلوم الإسلامية الأصيلة ودراستها وتجلتها. ومن خلال مكتبة صوتية شاملة، وتحليل ممنهج للبودكاست، ونصوص محققة، وتعليقات علمية، تربط ISR الطلاب والباحثين مباشرة بالسنن النبوية والمصادر الأصلية.'
+            )}
           </p>
 
           {/* Call to action group */}
@@ -39,7 +48,7 @@ export const HeroSection: React.FC = () => {
               className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-md bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold text-sm tracking-wide uppercase transition-all shadow-md focus:outline-none focus:ring-2 focus:ring-amber-400"
             >
               <Headphones className="w-4 h-4" />
-              <span>Stream Live Podcasts</span>
+              <span>{t('Stream Live Podcasts', 'استمع للبث الصوتي المباشر')}</span>
             </a>
 
             <a
@@ -47,15 +56,15 @@ export const HeroSection: React.FC = () => {
               className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-md bg-white hover:bg-neutral-50 text-neutral-800 border border-neutral-300 font-medium text-sm tracking-wide shadow-xs dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:border-neutral-700 transition-all"
             >
               <Library className="w-4 h-4 text-amber-600 dark:text-amber-400" />
-              <span>Explore 74,297 Classical Texts</span>
+              <span>{t('Explore 74,297 Classical Texts', 'استكشف ٧٤,٢٩٧ نصاً تراثياً')}</span>
             </a>
 
             <a
               href="#featured-creatives"
               className="inline-flex items-center gap-2 px-4 py-3.5 text-amber-800 hover:text-amber-950 dark:text-amber-400 dark:hover:text-amber-300 text-sm font-medium transition-colors group"
             >
-              <span>View Featured Creatives</span>
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              <span>{t('View Featured Creatives', 'عرض المحتوى المميز')}</span>
+              <ArrowRight className={`w-4 h-4 transition-transform group-hover:translate-x-1 ${language === 'ar' ? 'rotate-180 group-hover:-translate-x-1' : ''}`} />
             </a>
           </div>
 
@@ -66,10 +75,10 @@ export const HeroSection: React.FC = () => {
                 {CLASSICAL_TEXT_BREAKDOWN.quranVerses.toLocaleString()}
               </div>
               <div className="text-xs uppercase tracking-wider text-neutral-600 dark:text-neutral-400 font-semibold">
-                Quranic Verses
+                {t('Quranic Verses', 'آيات القرآن الكريم')}
               </div>
               <div className="text-[11px] text-neutral-500 dark:text-neutral-500 mt-1">
-                Direct revelation with Tafsir
+                {t('Direct revelation with Tafsir', 'الوحي المباشر مع التفسير')}
               </div>
             </div>
 
@@ -78,10 +87,10 @@ export const HeroSection: React.FC = () => {
                 {CLASSICAL_TEXT_BREAKDOWN.sahihTotal.toLocaleString()}
               </div>
               <div className="text-xs uppercase tracking-wider text-neutral-600 dark:text-neutral-400 font-semibold">
-                Sahih Hadiths
+                {t('Sahih Hadiths', 'الأحاديث الصحيحة')}
               </div>
               <div className="text-[11px] text-neutral-500 dark:text-neutral-500 mt-1">
-                Al-Bukhari and Muslim
+                {t('Al-Bukhari and Muslim', 'صحيح البخاري ومسلم')}
               </div>
             </div>
 
@@ -90,10 +99,10 @@ export const HeroSection: React.FC = () => {
                 {CLASSICAL_TEXT_BREAKDOWN.totalHadiths.toLocaleString()}
               </div>
               <div className="text-xs uppercase tracking-wider text-neutral-600 dark:text-neutral-400 font-semibold">
-                Hadith Narrations
+                {t('Hadith Narrations', 'مرويات الحديث')}
               </div>
               <div className="text-[11px] text-neutral-500 dark:text-neutral-500 mt-1">
-                9 Primary classical collections
+                {t('9 Primary classical collections', '٩ مصنفات حديثية أساسية')}
               </div>
             </div>
 
@@ -102,10 +111,10 @@ export const HeroSection: React.FC = () => {
                 {CLASSICAL_TEXT_BREAKDOWN.combinedTotalTexts.toLocaleString()}
               </div>
               <div className="text-xs uppercase tracking-wider text-neutral-600 dark:text-neutral-400 font-semibold">
-                Combined Corpus
+                {t('Combined Corpus', 'المجموع الكلي للمصنفات')}
               </div>
               <div className="text-[11px] text-neutral-500 dark:text-neutral-500 mt-1">
-                Quran and Sunnah library
+                {t('Quran and Sunnah library', 'مكتبة القرآن والسنة الشريفة')}
               </div>
             </div>
           </div>
@@ -114,3 +123,4 @@ export const HeroSection: React.FC = () => {
     </section>
   );
 };
+

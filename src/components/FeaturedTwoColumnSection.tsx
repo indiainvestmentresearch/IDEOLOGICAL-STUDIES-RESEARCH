@@ -1,18 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Maximize2, X, ExternalLink, CheckCircle, BookOpen, Layers, ShieldCheck } from 'lucide-react';
 import { ECOSYSTEM_PLATFORMS, SOCIAL_LINKS } from '../data/staticData';
+import { useLanguage } from '../context/LanguageContext';
 
 export const FeaturedTwoColumnSection: React.FC = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const { t, language } = useLanguage();
 
   const creatives = [
     {
+      id: 'isr-curriculum',
+      title: t('ISR Curriculum & Research Framework', 'منهجية ومؤسسة أبحاث الدراسات العقدية'),
+      tag: t('Ideological Studies', 'دراسات عقدية'),
+      imageSrc: '/src/assets/images/ISR 3.png',
+      altText: 'ISR Curriculum and Research Framework presentation slide showcasing foundational studies',
+      description: t('Comprehensive curriculum outlining ideological studies, classical research methodology, and structured personal development tracks.', 'منهج شامل يوضح الدراسات العقدية، ومنهجية البحث التراثي، ومسارات التنمية الشخصية المنظمة.'),
+      highlights: [
+        t('Structured modular learning paths', 'مسارات تعلم هيكلية ونظامية'),
+        t('Prophetic scholarship and contemporary application', 'فقه النبوة والتطبيق المعاصر'),
+        t('Rigorous isnad and epistemological foundation', 'أسانيد محققة وأسس معرفية رصينة')
+      ]
+    },
+    {
       id: 'gate-ecosystem',
-      title: '.Gate Knowledge Ecosystem Showcase',
-      tag: 'Unified Platform',
-      imageSrc: '/assets/gate-showcase.jpg',
-      altText: '.Gate application ecosystem interface showcasing Books, Podcasts, Infographics, and Research Reports',
+      title: 'Gate Knowledge Ecosystem Showcase',
+      tag: 'Core Knowledge Architecture',
+      imageSrc: '/src/assets/images/ISR 2.png',
+      altText: 'Gate application ecosystem interface showcasing Books, Podcasts, Infographics, and Research Reports',
       description: 'A multi-platform digital ecosystem uniting books, research reports, audiobooks, and infographics across IPN, IGC, IFR, and ISR.',
       highlights: [
         'Connecting theology, ethical economics, policy, and personal growth',
@@ -24,7 +41,7 @@ export const FeaturedTwoColumnSection: React.FC = () => {
       id: 'isr-library',
       title: 'ISR Classical Research Library',
       tag: 'Prophetic Scholarship',
-      imageSrc: '/assets/isr-creative.jpg',
+      imageSrc: '/src/assets/images/ISR 1.png',
       altText: 'Ideological Studies Research classical texts exhibition highlighting Quranic exegesis and authentic Hadith collections',
       description: 'Preserving and teaching classical Islamic sciences through verified manuscripts, audios, and exegesis spanning 68,061 Hadiths and 6,236 Quranic verses.',
       highlights: [
@@ -45,6 +62,39 @@ export const FeaturedTwoColumnSection: React.FC = () => {
     setActiveSlide((prev) => (prev - 1 + creatives.length) % creatives.length);
   };
 
+  // Auto-sliding every 5 seconds (pauses on hover)
+  useEffect(() => {
+    if (isModalOpen) return;
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [activeSlide, isModalOpen]);
+
+  // Touch/Swipe handlers
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    if (isLeftSwipe) {
+      nextSlide();
+    } else if (isRightSwipe) {
+      prevSlide();
+    }
+  };
+
   return (
     <section id="featured-creatives" className="py-16 sm:py-20 lg:py-24 bg-white border-b border-neutral-200 dark:bg-[#0e0f11] dark:border-neutral-800 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,7 +108,7 @@ export const FeaturedTwoColumnSection: React.FC = () => {
             A Clean Architecture for Purposeful Human Attention.
           </h2>
           <p className="mt-4 text-base sm:text-lg text-neutral-600 dark:text-neutral-300 font-sans leading-relaxed">
-            Instead of dispersing your focus across disparate applications and algorithmically driven distractions, the .Gate ecosystem and ISR unify classical theology, economic analysis, and deliberate growth into a singular digital library.
+            Instead of dispersing your focus across disparate applications and algorithmically driven distractions, the Gate ecosystem and ISR unify classical theology, economic analysis, and deliberate growth into a singular digital library.
           </p>
         </div>
 
@@ -130,7 +180,7 @@ export const FeaturedTwoColumnSection: React.FC = () => {
                   </div>
                   <div className="bg-amber-50/80 dark:bg-amber-950/20 p-3 rounded border border-amber-200/80 dark:border-amber-500/30">
                     <span className="font-semibold text-amber-950 dark:text-amber-200 block mb-1">
-                      20 Minutes on .Gate & ISR
+                      20 Minutes on Gate & ISR
                     </span>
                     A verified Hadith exegesis, an audit of debt mechanics in modern banking, or a foundational lesson in Arabic jurisprudence.
                   </div>
@@ -198,12 +248,17 @@ export const FeaturedTwoColumnSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* Slider Frame: Intended Proportions, NO Unwanted Crop or Stretch */}
-              <div className="relative w-full aspect-[2/3] max-h-[580px] bg-neutral-950 rounded-lg overflow-hidden flex items-center justify-center border border-neutral-800 group">
+              {/* Slider Frame: True Aspect Ratio, No Borders or Cropping */}
+              <div 
+                className="relative w-full overflow-hidden flex items-center justify-center group cursor-grab active:cursor-grabbing"
+                onTouchStart={onTouchStart}
+                onTouchMove={onTouchMove}
+                onTouchEnd={onTouchEnd}
+              >
                 <img
                   src={current.imageSrc}
                   alt={current.altText}
-                  className="w-full h-full object-contain select-none transition-transform duration-500 group-hover:scale-[1.01]"
+                  className="w-full h-auto object-contain select-none transition-all duration-500 transform ease-out"
                   loading="lazy"
                 />
                 
