@@ -124,24 +124,24 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* Brand Lockup */}
-          <div className="flex items-center gap-2 sm:gap-4 md:gap-5 min-w-0">
+          <div className="flex items-center gap-1.5 sm:gap-4 md:gap-5 min-w-0 shrink-0">
             <a
               href="#"
               className="flex items-center gap-2 sm:gap-3 group focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-sm shrink-0"
               aria-label="Ideological Studies Research Home"
             >
-              <ISRLogo className="h-8 sm:h-11 md:h-13 lg:h-14 w-auto rounded-xl sm:rounded-3xl p-0.5 bg-transparent shadow-none" variant={isDark ? 'light' : 'dark'} />
+              <ISRLogo className="h-7 sm:h-11 md:h-13 lg:h-14 w-auto rounded-xl sm:rounded-3xl p-0.5 bg-transparent shadow-none" variant={isDark ? 'light' : 'dark'} />
             </a>
-            <span className={`hidden sm:inline-block w-0.5 h-7 sm:h-9 md:h-10 ${isDark ? 'bg-neutral-700' : 'bg-neutral-300'}`} />
+            <span className={`inline-block w-0.5 h-6 sm:h-9 md:h-10 shrink-0 ${isDark ? 'bg-neutral-700' : 'bg-neutral-300'}`} />
             <a
               href={SOCIAL_LINKS.gateWebsite}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:flex items-center group focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-sm"
+              className="flex items-center group focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-sm shrink-0"
               title="Visit .Gate"
               aria-label=".Gate Official Website"
             >
-              <GateLogo className="h-7 sm:h-9 md:h-11 lg:h-12 w-auto rounded-xl sm:rounded-3xl p-0.5 bg-transparent shadow-none" variant={isDark ? 'light' : 'dark'} />
+              <GateLogo className="h-6 sm:h-9 md:h-11 lg:h-12 w-auto rounded-xl sm:rounded-3xl p-0.5 bg-transparent shadow-none" variant={isDark ? 'light' : 'dark'} />
             </a>
           </div>
 
@@ -269,12 +269,10 @@ export const Navbar: React.FC = () => {
 
               {/* Main Header Content */}
               <div className="flex items-center justify-between px-6 py-3.5">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2.5">
                   <ISRLogo className="h-7 w-auto" variant="light" />
                   <span className="w-px h-4 bg-neutral-700" />
-                  <span className="text-xs font-semibold tracking-wider uppercase text-neutral-400">
-                    {t('Navigation', 'التنقل الرئيسي')}
-                  </span>
+                  <GateLogo className="h-6 w-auto" variant="light" />
                 </div>
 
                 <div className="flex items-center gap-2">
