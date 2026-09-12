@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Maximize2, X, ExternalLink, CheckCircle, BookOpen, Layers, ShieldCheck } from 'lucide-react';
 import { ECOSYSTEM_PLATFORMS, SOCIAL_LINKS } from '../data/staticData';
 import { useLanguage } from '../context/LanguageContext';
+import isr1Img from '../assets/images/ISR 1.png';
+import isr2Img from '../assets/images/ISR 2.png';
+import isr3Img from '../assets/images/ISR 3.png';
 
 export const FeaturedTwoColumnSection: React.FC = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -15,7 +18,8 @@ export const FeaturedTwoColumnSection: React.FC = () => {
       id: 'isr-curriculum',
       title: t('ISR Curriculum & Research Framework', 'منهجية ومؤسسة أبحاث الدراسات العقدية'),
       tag: t('Ideological Studies', 'دراسات عقدية'),
-      imageSrc: '/src/assets/images/ISR 3.png',
+      imageSrc: isr3Img,
+      fallbackSrc: '/assets/images/ISR 3.png',
       altText: 'ISR Curriculum and Research Framework presentation slide showcasing foundational studies',
       description: t('Comprehensive curriculum outlining ideological studies, classical research methodology, and structured personal development tracks.', 'منهج شامل يوضح الدراسات العقدية، ومنهجية البحث التراثي، ومسارات التنمية الشخصية المنظمة.'),
       highlights: [
@@ -28,7 +32,8 @@ export const FeaturedTwoColumnSection: React.FC = () => {
       id: 'gate-ecosystem',
       title: 'Gate Knowledge Ecosystem Showcase',
       tag: 'Core Knowledge Architecture',
-      imageSrc: '/src/assets/images/ISR 2.png',
+      imageSrc: isr2Img,
+      fallbackSrc: '/assets/images/ISR 2.png',
       altText: 'Gate application ecosystem interface showcasing Books, Podcasts, Infographics, and Research Reports',
       description: 'A multi-platform digital ecosystem uniting books, research reports, audiobooks, and infographics across IPN, IGC, IFR, and ISR.',
       highlights: [
@@ -41,7 +46,8 @@ export const FeaturedTwoColumnSection: React.FC = () => {
       id: 'isr-library',
       title: 'ISR Classical Research Library',
       tag: 'Prophetic Scholarship',
-      imageSrc: '/src/assets/images/ISR 1.png',
+      imageSrc: isr1Img,
+      fallbackSrc: '/assets/images/ISR 1.png',
       altText: 'Ideological Studies Research classical texts exhibition highlighting Quranic exegesis and authentic Hadith collections',
       description: 'Preserving and teaching classical Islamic sciences through verified manuscripts, audios, and exegesis spanning 68,061 Hadiths and 6,236 Quranic verses.',
       highlights: [
@@ -260,6 +266,9 @@ export const FeaturedTwoColumnSection: React.FC = () => {
                   alt={current.altText}
                   className="w-full h-auto object-contain select-none transition-all duration-500 transform ease-out"
                   loading="lazy"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = current.fallbackSrc;
+                  }}
                 />
                 
                 {/* Floating expand prompt */}
@@ -328,6 +337,9 @@ export const FeaturedTwoColumnSection: React.FC = () => {
               src={current.imageSrc}
               alt={current.altText}
               className="max-h-[78vh] w-auto object-contain rounded shadow-2xl border border-neutral-700"
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = current.fallbackSrc;
+              }}
             />
           </div>
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { GateLogo } from './BrandLogos';
 import { BookOpen, ShieldCheck, Database, Smartphone, FileText, Headphones, Sparkles, CheckCircle } from 'lucide-react';
 import { ECOSYSTEM_PLATFORMS, SOCIAL_LINKS } from '../data/staticData';
+import gateFiImg from '../assets/images/GATE FI.png';
 
 export const GateWebAppCTA: React.FC = () => {
   return (
@@ -118,10 +119,13 @@ export const GateWebAppCTA: React.FC = () => {
                 {/* Featured Image */}
                 <div className="relative overflow-hidden flex items-center justify-center p-1">
                   <img
-                    src="/src/assets/images/GATE FI.png"
+                    src={gateFiImg}
                     alt="GATE Ecosystem Featured View"
                     className="w-full h-auto object-contain"
                     referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = '/assets/images/GATE FI.png';
+                    }}
                   />
                 </div>
 

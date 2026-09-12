@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { ZaydSignature } from './BrandLogos';
+import founderPortraitImg from '../assets/images/IMG_9322.jpg';
 import {
   Award,
   BookOpen,
@@ -51,13 +52,13 @@ export const AboutFounderSection: React.FC = () => {
             <div className="w-full max-w-sm rounded-xl overflow-hidden bg-neutral-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 shadow-md p-2.5">
               <div className="relative aspect-[4/5] rounded-lg overflow-hidden bg-neutral-900 group">
                 <img
-                  src="/src/assets/images/IMG_9322.jpg"
+                  src={founderPortraitImg}
                   alt="Zayd Iqbal Haji, Founder of Ideological Studies Research"
                   className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
                   loading="lazy"
                   referrerPolicy="no-referrer"
                   onError={(e) => {
-                    (e.target as HTMLImageElement).src = '/assets/zayd-portrait.jpg';
+                    (e.target as HTMLImageElement).src = '/assets/images/IMG_9322.jpg';
                   }}
                 />
               </div>
