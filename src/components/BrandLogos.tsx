@@ -1,6 +1,6 @@
 import React from 'react';
 import isrLogoImg from '../assets/images/Slide3.png';
-import gateLogoImg from '../assets/images/Slide6.png';
+import gateLogoImg from '../assets/images/Slide5.png';
 import signatureImg from '../assets/images/ZAYD AL HAJI SIGNATURE PNG-Photoroom.png';
 
 interface LogoProps {
@@ -33,7 +33,7 @@ export const GateLogo: React.FC<LogoProps> = ({ className = 'h-10 w-auto' }) => 
         className="h-full w-auto max-h-full object-contain rounded-2xl sm:rounded-3xl"
         referrerPolicy="no-referrer"
         onError={(e) => {
-          (e.target as HTMLImageElement).src = '/assets/images/Slide6.png';
+          (e.target as HTMLImageElement).src = '/assets/images/Slide5.png';
         }}
       />
     </div>
