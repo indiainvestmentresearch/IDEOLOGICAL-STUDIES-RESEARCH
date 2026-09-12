@@ -32,14 +32,14 @@ export const AboutFounderSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100/80 border border-amber-200 text-amber-900 dark:bg-amber-500/10 dark:border-amber-500/20 dark:text-amber-300 text-xs font-semibold tracking-wider uppercase mb-3">
+        <div className="max-w-3xl mb-8 sm:mb-16">
+          <div className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-amber-100/80 border border-amber-200 text-amber-900 dark:bg-amber-500/10 dark:border-amber-500/20 dark:text-amber-300 text-[10px] sm:text-xs font-semibold tracking-wider uppercase mb-2.5 sm:mb-3">
             <span>Leadership & Scholastic Provenance</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-neutral-900 dark:text-white tracking-tight leading-tight">
+          <h2 className="text-xl sm:text-3xl lg:text-4xl font-serif font-bold text-neutral-900 dark:text-white tracking-tight leading-snug sm:leading-tight">
             About Zayd Iqbal Haji.
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-neutral-600 dark:text-neutral-300 font-sans leading-relaxed">
+          <p className="mt-2.5 sm:mt-4 text-xs sm:text-lg text-neutral-600 dark:text-neutral-300 font-sans leading-relaxed">
             Researcher, author, and institutional founder working across the intersection of classical Islamic sciences, macroeconomic analysis, and ethical capital allocation.
           </p>
         </div>

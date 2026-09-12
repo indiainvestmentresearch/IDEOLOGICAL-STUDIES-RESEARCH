@@ -26,16 +26,16 @@ export const GateWebAppCTA: React.FC = () => {
             {/* Left Narrative Column */}
             <div className="lg:col-span-7 space-y-6">
               
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-800 border border-neutral-700 text-amber-300 text-xs font-semibold tracking-wider uppercase">
-                <GateLogo className="h-4 w-auto" variant="light" />
+              <div className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-neutral-800 border border-neutral-700 text-amber-300 text-[10px] sm:text-xs font-semibold tracking-wider uppercase">
+                <GateLogo className="h-3.5 sm:h-4 w-auto" variant="light" />
                 <span className="ml-1">The Gate Knowledge WebApp</span>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-white tracking-tight leading-tight">
+              <h2 className="text-xl sm:text-3xl lg:text-4xl font-serif font-bold text-white tracking-tight leading-snug sm:leading-tight">
                 Access 6,236 Quranic Verses, 68,061 Hadiths, and 4,000+ Market Research Resources.
               </h2>
 
-              <p className="text-sm sm:text-base text-neutral-300 font-sans leading-relaxed">
+              <p className="text-xs sm:text-base text-neutral-300 font-sans leading-relaxed">
                 Curated deliberately for faith, intellectual development, and strategic competence. The Gate application bridges the divide between classical scholasticism and contemporary institutional analysis.
               </p>
 

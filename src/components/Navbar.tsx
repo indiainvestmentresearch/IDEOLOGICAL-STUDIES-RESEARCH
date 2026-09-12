@@ -107,7 +107,7 @@ export const Navbar: React.FC = () => {
     <>
       <header className="fixed top-2 sm:top-3 left-2 sm:left-4 right-2 sm:right-4 z-40 max-w-7xl mx-auto transition-all duration-300">
         <div
-          className={`relative px-3.5 sm:px-6 py-2 sm:py-2.5 rounded-2xl sm:rounded-3xl md:rounded-full border transition-all duration-300 flex items-center justify-between shadow-lg ${
+          className={`relative px-3 sm:px-6 py-1.5 sm:py-2.5 rounded-2xl sm:rounded-3xl md:rounded-full border transition-all duration-300 flex items-center justify-between shadow-lg ${
             isDark
               ? isScrolled
                 ? 'bg-neutral-950/80 backdrop-blur-xl border-neutral-800/90 text-neutral-100 shadow-black/40'
@@ -130,9 +130,9 @@ export const Navbar: React.FC = () => {
               className="flex items-center gap-2 sm:gap-3 group focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-sm shrink-0"
               aria-label="Ideological Studies Research Home"
             >
-              <ISRLogo className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto rounded-2xl sm:rounded-3xl p-0.5 bg-transparent shadow-none" variant={isDark ? 'light' : 'dark'} />
+              <ISRLogo className="h-8 sm:h-11 md:h-13 lg:h-14 w-auto rounded-xl sm:rounded-3xl p-0.5 bg-transparent shadow-none" variant={isDark ? 'light' : 'dark'} />
             </a>
-            <span className={`hidden sm:inline-block w-0.5 h-8 sm:h-9 md:h-10 ${isDark ? 'bg-neutral-700' : 'bg-neutral-300'}`} />
+            <span className={`hidden sm:inline-block w-0.5 h-7 sm:h-9 md:h-10 ${isDark ? 'bg-neutral-700' : 'bg-neutral-300'}`} />
             <a
               href={SOCIAL_LINKS.gateWebsite}
               target="_blank"
@@ -141,7 +141,7 @@ export const Navbar: React.FC = () => {
               title="Visit .Gate"
               aria-label=".Gate Official Website"
             >
-              <GateLogo className="h-9 sm:h-10 md:h-12 lg:h-14 w-auto rounded-2xl sm:rounded-3xl p-0.5 bg-transparent shadow-none" variant={isDark ? 'light' : 'dark'} />
+              <GateLogo className="h-7 sm:h-9 md:h-11 lg:h-12 w-auto rounded-xl sm:rounded-3xl p-0.5 bg-transparent shadow-none" variant={isDark ? 'light' : 'dark'} />
             </a>
           </div>
 

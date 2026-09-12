@@ -47,47 +47,47 @@ export const LivePodcastSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-12">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 border border-amber-300/80 text-amber-900 dark:bg-amber-500/10 dark:border-amber-500/20 dark:text-amber-400 text-xs font-semibold tracking-wider uppercase mb-3">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-amber-100 border border-amber-300/80 text-amber-900 dark:bg-amber-500/10 dark:border-amber-500/20 dark:text-amber-400 text-[10px] sm:text-xs font-semibold tracking-wider uppercase mb-2.5 sm:mb-3">
+              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
               <span>Live RSS Integration Connected</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-neutral-900 dark:text-white tracking-tight leading-tight">
+            <h2 className="text-xl sm:text-3xl lg:text-4xl font-serif font-bold text-neutral-900 dark:text-white tracking-tight leading-snug sm:leading-tight">
               Scholarly Audio Lectures & Podcast Exegesis.
             </h2>
-            <p className="mt-3 text-sm sm:text-base text-neutral-600 dark:text-neutral-400 font-sans leading-relaxed">
+            <p className="mt-2 sm:mt-3 text-xs sm:text-base text-neutral-600 dark:text-neutral-400 font-sans leading-relaxed">
               Connected live to the Anchor RSS feed. Any lecture uploaded to Spotify automatically appears here. Listen directly within the browser audio player, or open episodes in Spotify and Apple Podcasts.
             </p>
           </div>
 
           {/* External platform quick buttons */}
-          <div className="flex flex-wrap items-center gap-3 shrink-0">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 shrink-0">
             <a
               href={SOCIAL_LINKS.spotifyChannel}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-xs tracking-wide transition-all shadow-sm"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-xs tracking-wide transition-all shadow-sm"
             >
               <span>Spotify Channel</span>
-              <ExternalLink className="w-3.5 h-3.5" />
+              <ExternalLink className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
             </a>
             <a
               href={SOCIAL_LINKS.applePodcasts}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white hover:bg-neutral-50 text-neutral-800 border border-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:border-neutral-700 font-medium text-xs tracking-wide shadow-xs transition-all"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg bg-white hover:bg-neutral-50 text-neutral-800 border border-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:border-neutral-700 font-medium text-xs tracking-wide shadow-xs transition-all"
             >
               <span>Apple Podcasts</span>
-              <ExternalLink className="w-3.5 h-3.5" />
+              <ExternalLink className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
             </a>
             <button
               onClick={loadEpisodes}
-              className="p-2.5 rounded-lg bg-white hover:bg-neutral-50 text-neutral-600 hover:text-neutral-900 border border-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-white dark:border-neutral-700 transition-colors shadow-xs"
+              className="p-2 sm:p-2.5 rounded-lg bg-white hover:bg-neutral-50 text-neutral-600 hover:text-neutral-900 border border-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-white dark:border-neutral-700 transition-colors shadow-xs"
               title="Refresh live RSS feed"
               aria-label="Refresh podcast feed"
             >
-              <RefreshCw className={`w-4 h-4 ${isLoading ? 'animate-spin text-amber-500' : ''}`} />
+              <RefreshCw className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${isLoading ? 'animate-spin text-amber-500' : ''}`} />
             </button>
           </div>
         </div>
